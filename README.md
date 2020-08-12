@@ -139,3 +139,9 @@ When this theme is installed, it creates a home page and apply this template:
 `resources/views/template-home.blade.php`
 
 Edit this file to customize your home page.
+
+### Theme Colors
+
+You can change bootstrap components default colors by overwriting its variables.
+
+You can do it here: `resources/assets/styles/common/_variables.scss`.

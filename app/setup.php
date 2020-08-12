@@ -127,7 +127,7 @@ add_action('after_setup_theme', function () {
     });
 });
 
-add_action('after_setup_theme', function () {
+add_action('after_switch_theme', function () {
     if(
         get_option('page_on_front') == '0' 
         && get_option('show_on_front') == 'posts'

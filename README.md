@@ -7,12 +7,12 @@
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Blade](https://laravel.com/docs/5.5/blade) as a templating engine
 * [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* [Bootstrap 4](https://getbootstrap.com/)
-* [Bootstrap 4 Navwalker](https://gist.github.com/smutek/cd95c8bc4f1db70ee1eda2740bfbf6fd)
-* [Font Awesome](https://fontawesome.com/v4.7.0/)
-* [Vanilla Lazyload](https://github.com/verlok/vanilla-lazyload)
-* [Carbon Fields](https://carbonfields.net/docs/)
-* [Slick Carousel](https://kenwheeler.github.io/slick/)
+* [Bootstrap 4](https://getbootstrap.com/) as CSS framework
+* [Bootstrap 4 Navwalker](https://gist.github.com/smutek/cd95c8bc4f1db70ee1eda2740bfbf6fd) for creating the navigation with the correct bootstrap 4 tags
+* [Font Awesome](https://fontawesome.com/v4.7.0/) for icons
+* [Vanilla Lazyload](https://github.com/verlok/vanilla-lazyload) for lazy loading images and improved performance
+* [Carbon Fields](https://carbonfields.net/docs/) for custom fields
+* [Slick Carousel](https://kenwheeler.github.io/slick/) for carousels
 
 ## Requirements
 

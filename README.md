@@ -83,9 +83,9 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 * `yarn run build` — Compile and optimize the files in your assets directory
 * `yarn run build:production` — Compile assets for production
 
-### Resources
+## Resources
 
-#### Lazy load
+### Lazy load
 Load your images with lazy load following this examples:
 
 ```html
@@ -96,7 +96,7 @@ Load your images with lazy load following this examples:
 />
 ```
 
-#### Carousel
+### Carousel
 Carousels can be built with **Slick Carousel**.
 
 Slick Carousel is loaded globally, so in order to create a carousel you only have to do this:
@@ -105,7 +105,7 @@ Slick Carousel is loaded globally, so in order to create a carousel you only hav
 $('.your-carousel-selector').slick(args);
 ```
 
-##### Lazy load on carousels
+#### Lazy load on carousels
 On carousels, use Slick lazy load function instead of Vanilla Lazyload:
 
 ```html
@@ -115,5 +115,20 @@ $('.lazy').slick({
   lazyLoad: 'ondemand',
   slidesToShow: 3,
   slidesToScroll: 1
+});
+```
+
+### Theme Options / Custom Fields
+
+In order to change theme options fields access the file `app/options.php` and change the fields in the array here:
+
+```php
+add_action( 'carbon_fields_register_fields', function () {
+    Container::make( 'theme_options', __('Theme Options', 'sage') )
+        ->add_fields( array(
+            // CREATE HERE YOUR THEME OPTIONS FIELDS:
+            Field::make( 'text', 'crb_facebook_url') ,
+            Field::make( 'textarea', 'crb_footer_text' )
+        ));
 });
 ```

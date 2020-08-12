@@ -132,3 +132,10 @@ add_action( 'carbon_fields_register_fields', function () {
         ));
 });
 ```
+
+### Theme Home Page
+
+When this theme is installed, it creates a home page and apply this template:
+`resources/views/template-home.blade.php`
+
+Edit this file to customize your home page.

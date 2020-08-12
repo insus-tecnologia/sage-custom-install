@@ -126,3 +126,29 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+add_action('after_setup_theme', function () {
+    if(
+        get_option('page_on_front') == '0' 
+        && get_option('show_on_front') == 'posts'
+    ){
+        // Create homepage
+        $homepage = array(
+            'post_type'    => 'page',
+            'post_title'    => 'Home',
+            'post_content'  => '',
+            'post_status'   => 'publish',
+            'post_author'   => 1
+        ); 
+        // Insert the post into the database
+        $homepage_id =  wp_insert_post( $homepage );
+        // set this page as homepage
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $homepage_id);
+        update_post_meta(
+            $homepage_id, 
+            '_wp_page_template', 
+            'views/template-home.blade.php'
+        );
+    }
+});

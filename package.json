@@ -106,6 +106,8 @@
     "bootstrap": "^4.0.0-beta",
     "font-awesome": "~4.7",
     "jquery": "^3.3.1",
-    "popper.js": "~1.11"
+    "popper.js": "~1.11",
+    "slick-carousel": "^1.8.1",
+    "vanilla-lazyload": "^17.1.0"
   }
 }

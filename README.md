@@ -1,22 +1,18 @@
-# [Sage](https://roots.io/sage/)
-[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
-[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
-
-Sage is a WordPress starter theme with a modern development workflow.
+# Sage Custom Install - WordPress Theme
 
 ## Features
 
-* Sass for stylesheets
-* Modern JavaScript
+* [Sass](https://sass-lang.com/) for stylesheets
 * [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Blade](https://laravel.com/docs/5.5/blade) as a templating engine
 * [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/)
-* Font Awesome (optional)
-
-See a working example at [roots-example-project.com](https://roots-example-project.com/).
+* [Bootstrap 4](https://getbootstrap.com/)
+* [Bootstrap 4 Navwalker](https://gist.github.com/smutek/cd95c8bc4f1db70ee1eda2740bfbf6fd)
+* [Font Awesome](https://fontawesome.com/v4.7.0/)
+* [Vanilla Lazyload](https://github.com/verlok/vanilla-lazyload)
+* [Carbon Fields](https://carbonfields.net/docs/)
+* [Slick Carousel](https://kenwheeler.github.io/slick/)
 
 ## Requirements
 
@@ -30,14 +26,12 @@ Make sure all dependencies have been installed before moving on:
 
 ## Theme installation
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+Install using Composer from directory you have cloned this project:
 
 ```shell
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name dev-master
+# @ wp-content/themes/your-theme-name
+$ composer install
 ```
-
-During theme installation you will have options to update `style.css` theme headers, select a CSS framework, add Font Awesome, and configure Browsersync.
 
 ## Theme structure
 
@@ -89,21 +83,37 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 * `yarn run build` — Compile and optimize the files in your assets directory
 * `yarn run build:production` — Compile assets for production
 
-## Documentation
+### Resources
 
-* [Sage documentation](https://roots.io/sage/docs/)
-* [Controller documentation](https://github.com/soberwp/controller#usage)
+#### Lazy load
+Load your images with lazy load following this examples:
 
-## Contributing
+```html
+<img 
+  alt="A lazy image" 
+  class="lazy"
+  data-src="lazy.jpg" 
+/>
+```
 
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
+#### Carousel
+Carousels can be built with **Slick Carousel**.
 
-## Community
+Slick Carousel is loaded globally, so in order to create a carousel you only have to do this:
 
-Keep track of development and community news.
+```js
+$('.your-carousel-selector').slick(args);
+```
 
-* Participate on the [Roots Discourse](https://discourse.roots.io/)
-* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-* Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+##### Lazy load on carousels
+On carousels, use Slick lazy load function instead of Vanilla Lazyload:
+
+```html
+<img data-lazy="img/lazyfonz1.png"/>
+
+$('.lazy').slick({
+  lazyLoad: 'ondemand',
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
+```

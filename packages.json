@@ -1,0 +1,7 @@
+{
+    "packages": {
+        "RaphaelBatagini/sage-custom-install": {
+            "1.0.0": { @composer.json }
+        }
+    }
+}

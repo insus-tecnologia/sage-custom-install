@@ -103,6 +103,7 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.0.0-beta",
     "font-awesome": "~4.7",
     "jquery": "^3.3.1",

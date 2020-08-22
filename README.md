@@ -13,6 +13,7 @@
 * [Vanilla Lazyload](https://github.com/verlok/vanilla-lazyload) for lazy loading images and improved performance
 * [Carbon Fields](https://carbonfields.net/docs/) for custom fields
 * [Slick Carousel](https://kenwheeler.github.io/slick/) for carousels
+* [Axios](https://github.com/axios/axios) for asynchronous front-end requests
 
 ## Requirements
 
